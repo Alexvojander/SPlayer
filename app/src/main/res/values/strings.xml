@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Player</string>
+
+    <!-- DataBase Name And Version -->
+    <string name="database_version">1</string>
+    <string name="database_name">Player</string>
+
+    <integer name="com_vk_sdk_AppId">5573236</integer>
+
+    <string name="drawer_open">open drawer</string>
+    <string name="drawer_close">close drawer</string>
+    <string name="about">Material Design App, is an app designed by Javier Segovia Córdoba</string>
+    <string name="action_about">About</string>
+    <string name="website">desarrollador-android.com</string>
+    <string name="github">GitHub: github.com/dahnark</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+        sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+        qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+        sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+        vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</string>
+    <string name="title_activity_news_detail">NewsDetail</string>
+
+    <string-array name="drawer">
+        <item>Library</item>
+        <item>Favorite</item>
+        <item>Stream</item>
+        <item>Chat</item>
+        <!-- after divider -->
+        <item>Equalizer</item>
+        <item>Settings</item>
+    </string-array>
+
+    <string name="design">Design</string>
+    <string name="develop">Develop</string>
+
+    <string name="profile_defult_name">Anonymous</string>
+
+    <string name="loading_message">Loading…</string>
+    <string name="log_in">Log in</string>
+
+
+    <string name="enabled">Enabled</string>
+    <string name="flat">Flat</string>
+    <string name="bass_boost">Bass boost</string>
+
+    <string name="ok">OK</string>
+    <string name="copyright_message">Simple Equalizer v0.1a, Copyright \u00A92013 Kevin Boone. Feel free to distribute as you see fit.</string>
+    <string name="try_again">TRY AGAIN</string>
+    <string name="error">Error!</string>
+    <string name="check_connection">Check your internet connection.</string>
+    <string name="not_logged">Log in %1$s profile.</string>
+    <string name="theme_card_text_blue">Blue</string>
+    <string name="theme_card_text_red">Red</string>
+    <string name="theme_card_text_green">Green</string>
+    <string name="theme_card_text_orange">Orange</string>
+    <string name="theme_card_text_pink">Pink</string>
+    <string name="theme_card_text_indigo">Indigo</string>
+    <string name="theme_card_text_brown">Brown</string>
+    <string name="theme_card_text_blue_grey">Blue grey</string>
+    <string name="theme_card_text_falcon">Falcon</string>
+    <string name="theme_card_text_light_blue">Light Blue</string>
+    <string name="disagree">DISAGREE</string>
+    <string name="agree">AGREE</string>
+    <string name="add">Add</string>
+    <string name="new_playlist_name">Playlist</string>
+    <string name="new_playlist_invitation">Enter playlist name:</string>
+    <string name="new_playlist_title">Creating playlists</string>
+</resources>

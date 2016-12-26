@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="false"
+    android:clickable="false">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="64dp">
+        <com.dmplayer.ui.ExpandableLayout
+            android:id="@+id/local_playlists"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:color_header="@color/md_orange_200"
+            app:color_content="@color/md_orange_50"
+            app:text_title="Local playlists"
+            app:text_details="Your custom playlists"
+            app:src_image="@drawable/ic_music_original">
+            <include layout="@layout/expandable_add_local" />
+            </com.dmplayer.ui.ExpandableLayout>
+        <com.dmplayer.ui.ExpandableLayout
+            android:id="@+id/default_playlists"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="4dp"
+            app:color_header="@color/md_green_200"
+            app:color_content="@color/md_green_50"
+            app:text_title="Default playlists"
+            app:text_details="Predefined playlists"
+            app:src_image="@drawable/ic_music_original" />
+        <com.dmplayer.ui.ExpandableLayoutExternalAccount
+            android:id="@+id/vk_playlists"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="4dp"
+            app:color_header="@color/md_blue_200"
+            app:color_content="@color/md_blue_50"
+            app:text_title="Vk playlists"
+            app:text_details="Your playlists from vk.com"
+            app:src_image="@drawable/ic_music_original"
+            app:massage_layout="@layout/expandable_message_vk" />
+    </LinearLayout>
+</ScrollView>

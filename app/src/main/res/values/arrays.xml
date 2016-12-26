@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="drawer_icons">
+        <item>@drawable/ic_library_music</item>
+        <item>@drawable/ic_favorite</item>
+        <item>@drawable/ic_content_send</item>
+        <item>@android:drawable/ic_dialog_email</item>
+        <!-- after divider -->
+        <item>@drawable/ic_equalizer</item>
+        <item>@drawable/ic_settings</item>
+    </array>
+</resources>

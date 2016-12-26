@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="172dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/imageViewCover"
+        android:layout_width="match_parent"
+        android:layout_height="172dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/drawer_defult_header" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <com.dmplayer.ui.CircleImageView
+            android:id="@+id/profileAvatar"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            app:border_width="1dp"
+            app:border_color="@color/md_black_1000"
+            android:src="@drawable/avatar_default_another" />
+
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="25dp"
+            android:textSize="20sp"
+            android:textColor="@color/md_text_white"
+            android:shadowColor="@color/md_black_1000"
+            android:shadowRadius="1"
+            android:text="@string/profile_defult_name" />
+    </RelativeLayout>
+</FrameLayout>

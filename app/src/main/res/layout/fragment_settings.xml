@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white" >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewCommonSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_vertical"
+                android:text="Common Settings"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout_customize_profile"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="?attr/selectableItemBackground">
+                <FrameLayout
+                    android:id="@+id/frameLayout_profile_images"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp">
+                    <ImageView
+                        android:id="@+id/imageView_profile_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_settings_profile_1"
+                        android:tint="?attr/colorAccent"/>
+
+                    <ImageView
+                        android:id="@+id/imageView_profile_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_settings_profile_2"
+                        android:tint="?attr/colorPrimaryDark" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/linLayout_profile_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="64dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textView_profile_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Customize your profile"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                        android:textColor="@color/md_text"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView_profile_dsc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Press to change your avatar and name"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                        android:textColor="@color/md_secondary_text_icons"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/md_divider" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textViewAdvancedSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_vertical"
+                android:text="Advanced Settings"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse"
+                android:textColor="?attr/colorAccent"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout_choose_theme"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="?attr/selectableItemBackground">
+                <FrameLayout
+                    android:id="@+id/frameLayout_choose_theme_images"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp">
+                    <ImageView
+                        android:id="@+id/imageView_phone_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_hardware_phone_android_3"
+                        android:tint="?attr/colorAccent" />
+
+                    <ImageView
+                        android:id="@+id/imageView_phone_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_hardware_phone_android_2"
+                        android:tint="?attr/colorPrimary" />
+
+                    <ImageView
+                        android:id="@+id/imageView_phone_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_hardware_phone_android"
+                        android:tint="?attr/colorAccent" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/linLayout_theme_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="64dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textView_theme_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Choose App Theme"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                        android:textColor="@color/md_text"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView_theme_dsc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Press to change the primary, primary dark and accent colors"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                        android:textColor="@color/md_secondary_text_icons"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/md_divider" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout_change_header_back"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="?attr/selectableItemBackground">
+                <FrameLayout
+                    android:id="@+id/frameLayout_header_back_images"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp">
+                    <ImageView
+                        android:id="@+id/imageView_back_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_settings_background_2"
+                        android:tint="?attr/colorPrimary"/>
+
+                    <ImageView
+                        android:id="@+id/imageView_back_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_settings_background_1"
+                        android:tint="?attr/colorAccent" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/linLayout_header_back_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="64dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textView_header_back_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Choose header background"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                        android:textColor="@color/md_text"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView_header_back_dsc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Press to change header's background in the sliding pannel"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                        android:textColor="@color/md_secondary_text_icons"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/md_divider" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutCreatePlaylist"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="?attr/selectableItemBackground">
+                <FrameLayout
+                    android:id="@+id/frameLayout_create_playlist_images"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp">
+                    <ImageView
+                        android:id="@+id/create_playlist_logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/create_playlist_logo"
+                        android:tint="?attr/colorAccent" />
+
+
+                </FrameLayout>
+                <LinearLayout
+                    android:id="@+id/linLayoutCreatePlaylistText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="64dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textViewCreatePlaylistInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Create playlist"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                        android:textColor="@color/md_text"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textViewCreatePlaylistDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Tap to create playlist with a song"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                        android:textColor="@color/md_secondary_text_icons"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/md_divider" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutMusicChooser"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="?attr/selectableItemBackground">
+                <FrameLayout
+                    android:id="@+id/frameLayout_open_choser_activity_images"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp">
+                    <ImageView
+                        android:id="@+id/open_choser_activity_logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/open_activity_logo"
+                        android:tint="?attr/colorAccent" />
+
+
+                </FrameLayout>
+                <LinearLayout
+                    android:id="@+id/linLayoutMusicChooserText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="64dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textViewMusicChooserInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Open music chooser activity"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                        android:textColor="@color/md_text"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textViewMusicChooserDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Open music chooser activity"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                        android:textColor="@color/md_secondary_text_icons"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/dividerHeaderBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/md_divider" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutMusicMixEnabled"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="?attr/selectableItemBackground">
+                <FrameLayout
+                    android:id="@+id/frameLayout_rotate_images"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp">
+                    <ImageView
+                        android:id="@+id/rotate_logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/rotate_logo"
+                        android:tint="?attr/colorAccent" />
+
+
+                </FrameLayout>
+                <LinearLayout
+                    android:id="@+id/linLayoutMusicMixEnabledText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="64dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textViewMusicMixEnabledInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Click here to on/off mixing mode"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                        android:textColor="@color/md_text"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textViewMusicMixEnabledDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Mixing mode off"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                        android:textColor="@color/md_secondary_text_icons"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+
+                <FrameLayout
+                    android:id="@+id/dividerHeaderBackgroundMixEnabled"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/md_divider" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/buf"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="?attr/selectableItemBackground">
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>
