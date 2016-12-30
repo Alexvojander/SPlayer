@@ -1,4 +1,4 @@
-package com.dmplayer.ui;
+package com.dmplayer.ui.expandablelayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -3,7 +3,9 @@ package com.dmplayer.fragments;
 import android.app.Fragment;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,10 +15,12 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.dmplayer.R;
 import com.dmplayer.activities.DMPlayerBaseActivity;
+import com.dmplayer.utility.RemotePlaylistServer;
 import com.dmplayer.utility.asynctaskabstraction.TaskStateListener;
 import com.dmplayer.manager.MediaController;
 import com.dmplayer.models.Playlist;
@@ -29,20 +33,29 @@ import com.dmplayer.utility.VkPlaylistTaskFactory;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FragmentPlaylist extends Fragment {
+import butterknife.BindView;
+import butterknife.OnClick;
+import fi.iki.elonen.NanoHTTPD;
 
-    private RecyclerView listOfSongs;
-    private FrameLayout progressBar;
+public class FragmentPlaylist extends BaseFragment {
 
-    private LinearLayout errorLayout;
-    private TextView errorInfo;
-    private TextView errorReload;
+    @BindView(R.id.recycle_songs) RecyclerView listOfSongs;
+    @BindView(R.id.progress_playlist) ProgressBar progressBar;
 
-    private SongListAdapter songAdapter;
-    private List<SongDetail> songList;
+    @BindView(R.id.error_layout) LinearLayout errorLayout;
+    @BindView(R.id.error_info) TextView errorInfo;
+    @BindView(R.id.error_reload) TextView errorReload;
+
+    @BindView(R.id.fab_remote_playlist) FloatingActionButton buttonRemotePlaylist;
+
+    private List<SongDetail> songList = new ArrayList<>();
+    private SongListAdapter songAdapter = new SongListAdapter(getActivity(), songList);
+
+    NanoHTTPD server;
 
     private static final String ARG_TYPE = "FragmentPlaylist_type";
     private static final String ARG_CATEGORY = "FragmentPlaylist_category";
@@ -83,33 +96,43 @@ public class FragmentPlaylist extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_playlist, null);
-        setupInitialViews(v);
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        init();
         loadPlaylist();
-        return v;
     }
 
-    private void setupInitialViews(View v) {
-        songList = new ArrayList<>();
-        songAdapter = new SongListAdapter(getActivity(), songList);
+    @Override
+    protected int getLayoutId() {
+        return R.layout.fragment_playlist;
+    }
 
-        listOfSongs = (RecyclerView) v.findViewById(R.id.list_of_songs);
+    private void init() {
         listOfSongs.setLayoutManager(new LinearLayoutManager(getActivity()));
         listOfSongs.setAdapter(songAdapter);
+    }
 
-        progressBar = (FrameLayout) v.findViewById(R.id.layout_progress_bar);
+    @OnClick(R.id.error_reload)
+    public void reloadPlaylist() {
+        errorLayout.setVisibility(View.GONE);
+        loadPlaylist();
+    }
 
-        errorLayout = (LinearLayout) v.findViewById(R.id.error_layout);
-        errorInfo = (TextView) v.findViewById(R.id.error_info);
-        errorReload = (TextView) v.findViewById(R.id.error_reload);
-        errorReload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                errorLayout.setVisibility(View.GONE);
-                loadPlaylist();
+    @OnClick(R.id.fab_remote_playlist)
+    public void switchRemotePlaylist() {
+        if (server == null) {
+            server = new RemotePlaylistServer(getActivity(), 8080);
+        }
+
+        if (server.isAlive()) {
+            server.stop();
+        } else {
+            try {
+                server.start();
+            } catch (IOException e) {
+                Log.e(TAG, "A problem with starting playlist server", e);
             }
-        });
+        }
     }
 
     private void loadPlaylist() {

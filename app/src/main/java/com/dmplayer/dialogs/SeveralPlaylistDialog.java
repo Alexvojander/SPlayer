@@ -263,7 +263,7 @@ public class SeveralPlaylistDialog extends BaseDialogFragment {
         class ViewHolder extends RecyclerView.ViewHolder {
             @BindView(R.id.title)
             TextView title;
-            @BindView(R.id.details)
+            @BindView(R.id.exp_item_large_details)
             TextView details;
             @BindView(R.id.icon)
             ImageView icon;

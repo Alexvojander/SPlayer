@@ -1,6 +1,9 @@
 package com.dmplayer.fragments;
 
 import android.app.FragmentManager;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,14 +22,15 @@ import com.dmplayer.models.playlisitems.DefaultPlaylistItemSeveral;
 import com.dmplayer.models.playlisitems.DefaultPlaylistItemSingle;
 import com.dmplayer.models.playlisitems.VkPlaylistItemSeveral;
 import com.dmplayer.models.playlisitems.VkPlaylistItemSingle;
-import com.dmplayer.ui.ExpandableLayout;
-import com.dmplayer.ui.ExpandableLayoutExternalAccount;
-import com.dmplayer.ui.ExpandableLayoutManager;
+import com.dmplayer.ui.expandablelayout.ExpandableLayout;
+import com.dmplayer.ui.expandablelayout.ExpandableLayoutExternalAccount;
+import com.dmplayer.ui.expandablelayout.ExpandableLayoutManager;
 import com.dmplayer.ui.PlaylistItemView;
 import com.dmplayer.utility.FragmentPlaylistFactory;
 import com.dmplayer.utility.PlaylistProvider;
 import com.dmplayer.utility.SeveralPlaylistDialogFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -65,7 +69,7 @@ public class FragmentLibrary extends BaseFragment {
     private void init() {
         expandableLocal.setOnExpandListener(new ExpandableLayout.OnExpandListener() {
             @Override
-            public void OnExpand(ExpandableLayout v) {
+            public void onExpand(ExpandableLayout v) {
                 expandableManager.collapseOthers(v);
 
                 setupLocalPlaylists();
@@ -74,7 +78,7 @@ public class FragmentLibrary extends BaseFragment {
 
         expandableDefault.setOnExpandListener(new ExpandableLayout.OnExpandListener() {
             @Override
-            public void OnExpand(ExpandableLayout v) {
+            public void onExpand(ExpandableLayout v) {
                 expandableManager.collapseOthers(v);
 
                 setupDefaultPlaylists();
@@ -83,7 +87,7 @@ public class FragmentLibrary extends BaseFragment {
 
         expandableVk.setOnExpandListener(new ExpandableLayout.OnExpandListener() {
             @Override
-            public void OnExpand(ExpandableLayout v) {
+            public void onExpand(ExpandableLayout v) {
                 expandableManager.collapseOthers(v);
 
                 setupVkPlaylists();

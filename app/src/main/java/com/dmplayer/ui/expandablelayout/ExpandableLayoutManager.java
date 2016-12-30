@@ -1,4 +1,4 @@
-package com.dmplayer.ui;
+package com.dmplayer.ui.expandablelayout;
 
 import java.util.ArrayList;
 import java.util.List;

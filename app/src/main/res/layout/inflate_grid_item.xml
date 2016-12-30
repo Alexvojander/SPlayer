@@ -46,7 +46,7 @@
 
             <!-- The height is set to half the height of the parent, which is 64 dip -->
             <TextView
-                android:id="@+id/details"
+                android:id="@+id/exp_item_large_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title"

@@ -1,4 +1,4 @@
-package com.dmplayer.ui;
+package com.dmplayer.ui.expandablelayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -22,8 +22,8 @@ import butterknife.ButterKnife;
 public class ExpandableLayout extends LinearLayout {
     private static final String ANDROID_SCHEME = "http://schemas.android.com/apk/res/android";
 
-    private static final String SAVE_STATE_EXPANDED = "IS_EXPANDED";
-    private static final String SAVE_STATE_SUPER = "STATE_SUPER";
+    private static final String SAVE_STATE_EXPANDED = "SAVE_STATE_EXPANDED";
+    private static final String SAVE_STATE_LAYOUT = "SAVE_STATE_LAYOUT";
 
     private RelativeLayout header;
     private ImageView icon;
@@ -80,7 +80,7 @@ public class ExpandableLayout extends LinearLayout {
         if (state instanceof Bundle) {
             Bundle savedState = (Bundle) state;
             isExpanded = savedState.getBoolean(SAVE_STATE_EXPANDED, false);
-            state = savedState.getParcelable(SAVE_STATE_SUPER);
+            state = savedState.getParcelable(SAVE_STATE_LAYOUT);
         }
         if (isExpanded()) {
             show();
@@ -93,7 +93,7 @@ public class ExpandableLayout extends LinearLayout {
     @Override
     protected Parcelable onSaveInstanceState() {
         Bundle outState = new Bundle();
-        outState.putParcelable(SAVE_STATE_SUPER, super.onSaveInstanceState());
+        outState.putParcelable(SAVE_STATE_LAYOUT, super.onSaveInstanceState());
         outState.putBoolean(SAVE_STATE_EXPANDED, isExpanded());
 
         return outState;
@@ -141,7 +141,7 @@ public class ExpandableLayout extends LinearLayout {
         title.setText(titleText);
         title.setTextColor(getResources().getColor(R.color.md_black_1000));
 
-        TextView details = (TextView) findViewById(R.id.details);
+        TextView details = (TextView) findViewById(R.id.exp_item_large_details);
         details.setText(detailsText);
         details.setTextColor(getResources().getColor(R.color.md_grey_600));
 
@@ -169,7 +169,7 @@ public class ExpandableLayout extends LinearLayout {
 
     public void show() {
         if (onExpandListener != null) {
-            onExpandListener.OnExpand(this);
+            onExpandListener.onExpand(this);
         }
         isExpanded = true;
         content.setVisibility(View.VISIBLE);
@@ -189,7 +189,7 @@ public class ExpandableLayout extends LinearLayout {
 
     public void expand() {
         if (onExpandListener != null) {
-            onExpandListener.OnExpand(this);
+            onExpandListener.onExpand(this);
         }
         isExpanded = true;
 
@@ -272,6 +272,6 @@ public class ExpandableLayout extends LinearLayout {
         this.onExpandListener = l;
     }
     public interface OnExpandListener {
-        void OnExpand(ExpandableLayout v);
+        void onExpand(ExpandableLayout v);
     }
 }

@@ -46,7 +46,7 @@ import butterknife.ButterKnife;
 public class FragmentMusicChooser extends BaseFragment {
     private static final String TAG = FragmentMusicChooser.class.getSimpleName();
 
-    @BindView(R.id.list_of_songs)
+    @BindView(R.id.playlist_list_of_songs)
     ListView listOfSongs;
 
     private List<SongDetail> songList;

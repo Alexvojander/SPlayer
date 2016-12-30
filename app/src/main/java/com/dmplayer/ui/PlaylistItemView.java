@@ -24,8 +24,8 @@ public class PlaylistItemView extends RelativeLayout {
         inflate(context, R.layout.expandable_item_playlist, this);
         ButterKnife.bind(this);
 
-        ((TextView) ButterKnife.findById(this, R.id.name)).setText(playlistItem.getName());
-        ((TextView) ButterKnife.findById(this, R.id.details)).setText(playlistItem.getDetails());
+        ((TextView) ButterKnife.findById(this, R.id.exp_item_large_name)).setText(playlistItem.getName());
+        ((TextView) ButterKnife.findById(this, R.id.exp_item_large_details)).setText(playlistItem.getDetails());
         ((ImageView) ButterKnife.findById(this, R.id.icon)).setImageResource(playlistItem.getImageResourceId());
     }
 

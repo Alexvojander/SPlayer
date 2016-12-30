@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="64dp">
-        <com.dmplayer.ui.ExpandableLayout
+        <com.dmplayer.ui.expandablelayout.ExpandableLayout
             android:id="@+id/local_playlists"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,8 +22,8 @@
             app:text_details="Your custom playlists"
             app:src_image="@drawable/ic_music_original">
             <include layout="@layout/expandable_add_local" />
-            </com.dmplayer.ui.ExpandableLayout>
-        <com.dmplayer.ui.ExpandableLayout
+            </com.dmplayer.ui.expandablelayout.ExpandableLayout>
+        <com.dmplayer.ui.expandablelayout.ExpandableLayout
             android:id="@+id/default_playlists"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             app:text_title="Default playlists"
             app:text_details="Predefined playlists"
             app:src_image="@drawable/ic_music_original" />
-        <com.dmplayer.ui.ExpandableLayoutExternalAccount
+        <com.dmplayer.ui.expandablelayout.ExpandableLayoutExternalAccount
             android:id="@+id/vk_playlists"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

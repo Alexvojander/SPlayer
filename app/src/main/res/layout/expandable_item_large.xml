@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/exp_item_large_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@id/icon"
+            android:layout_alignParentTop="true"
+            android:maxLines="1"
+            android:textSize="18sp"
+            android:textColor="@color/md_black_1000"
+            android:text="Name" />
+        <TextView
+            android:id="@+id/exp_item_large_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@id/exp_item_large_name"
+            android:layout_below="@id/exp_item_large_name"
+            android:maxLines="1"
+            android:textSize="14sp"
+            android:text="Details" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
